@@ -13,5 +13,5 @@ proxy/proxy.js
 *.log
 *.xml
 .vscode/
-
+.idea/*.*
 .idea/workspace.xml

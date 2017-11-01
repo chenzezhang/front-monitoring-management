@@ -31,22 +31,26 @@ var ind = {
             success: function (data) {
                 if (data.success && data.data.length) {
                     $('.title').hide();
-                    tr = '', tr1 = '', td = '', td1 = '';
+                    var tr = '';
+                    var thead = '<thead><tr><th>type</th><th>sMsg</th><th>sUrl</th><th>sLine</th><th>sColu</th><th>eObj</th><th>sTime</th><th>browerType</th></tr></thead>';
                     var date = data.data;
                     for (var i = 0; i < date.length; i++) {
-                        var d = date[i];
-                        td = '', td1 = '';
-                        for (var a in d) {
-                            // f = d[a];
-                            // td = '', td1 = '';
-                            td += '<th>' + a + '</th>';
-                            td1 += '<td>' + d[a] + '</td>';
-
                         }
                         tr = '<thead><tr>' + td + '</tr></thead>';
                         tr1 += '<tr>' + td1 + '</tr>';
+                        var d = date[i], time = new Date(d.sTime);
+                        tr = tr + '<tr>' +
+                                '<td>'+ d.type +'</td>' +
+                                '<td>'+ d.sMsg +'</td>' +
+                                '<td>'+ d.sUrl +'</td>' +
+                                '<td>'+ d.sLine +'</td>' +
+                                '<td>'+ d.sColu +'</td>' +
+                                '<td>'+ d.eObj +'</td>' +
+                                '<td>'+ time.getFullYear() + '-' + (time.getMonth() + 1) + '-' + time.getDate() + ' ' + time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds() +'</td>' +
+                                '<td>'+ d.browerType +'</td>' +
+                            '</tr>'
                     }
-                    table = '<table class="table-hover">' + tr + tr1 + '</table>';
+                    table = '<table class="table-hover">' + thead + tr + '</table>';
 
                     $('#date').html(table);
 

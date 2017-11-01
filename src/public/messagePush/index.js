@@ -192,7 +192,6 @@ function setting(num, id) {
     });
 }
 
-
 function socketio(order) {
     var socket = io('http://localhost:3002');
     socket.on('connect', function () {

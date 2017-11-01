@@ -11,6 +11,8 @@ app.js
 proxy/proxy.js
 
 *.log
-
+*.xml
 .vscode/
-.idea/
+.idea/*.*
+.idea/workspace.xml
+

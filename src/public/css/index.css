@@ -307,6 +307,7 @@ h1.page-header small {
 
 .chartJs {
     padding-right: 15px;
+    position: relative;
 }
 
 i.fa.fa-bars {

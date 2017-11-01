@@ -37,22 +37,14 @@ var ind = {
                         var d = date[i];
                         td = '', td1 = '';
                         for (var a in d) {
-                            f = JSON.parse(d[a]);
-                            td = '', td1 = '';
-                            if (a.charAt(1) === 'r') {
-                                for (var e in f) {
-                                    if (e === 'sTime') {
-                                        const time = new Date(f[e])
-                                        f[e] = time.getFullYear() + '-' + (time.getMonth() + 1) + '-' + time.getDate() + ' '
-                                            + time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds();
-                                    }
-                                    td += '<th>' + e + '</th>';
-                                    td1 += '<td>' + f[e] + '</td>';
-                                }
-                                tr = '<thead><tr>' + td + '</tr></thead>';
-                                tr1 += '<tr>' + td1 + '</tr>';
-                            }
+                            // f = d[a];
+                            // td = '', td1 = '';
+                            td += '<th>' + a + '</th>';
+                            td1 += '<td>' + d[a] + '</td>';
+
                         }
+                        tr = '<thead><tr>' + td + '</tr></thead>';
+                        tr1 += '<tr>' + td1 + '</tr>';
                     }
                     table = '<table class="table-hover">' + tr + tr1 + '</table>';
 

@@ -13,7 +13,13 @@ var ind = {
 
 function histograms_urlErr(ele, originData) {
     var myChart = echarts.init(document.getElementById(ele));
-    var groupCategories = [], groupColors = [], data;
+    var groupCategories = [], groupColors = [];
+    var data = {
+        website:{},
+        mobile:{},
+        finance:{},
+        management:{}
+    }
     var maxTime = moment().add(1, "d").format("YYYY-MM-DD");
     var minTime = moment().subtract(6, "d").format("YYYY-MM-DD");
 
@@ -31,9 +37,9 @@ function histograms_urlErr(ele, originData) {
     })
 
     // $.get('/js/networktest1.json', function (originData) {
-        data = originData;
-        var init_data = normalizeData(data.website);
-        myChart.setOption(getOption(init_data));
+    $.extend(data, originData);
+    var init_data = normalizeData(data.website);
+    myChart.setOption(getOption(init_data));
     // });
 
     function normalizeData(originData) {
@@ -406,11 +412,11 @@ function world_cloud(ele) {
                 },
                 {
                     name: "Il n’y a pas de données",
-                    value: 4055,
+                    value: 2455,
                 },
                 {
                     name: "데이터 가 없다",
-                    value: 2467,
+                    value: 2767,
                 },
                 {
                     name: "Нет данных",
@@ -438,11 +444,11 @@ function world_cloud(ele) {
                 },
                 {
                     name: "Nessun dato",
-                    value: 582,
+                    value: 782,
                 },
                 {
                     name: "Lewis Hamilton",
-                    value: 555,
+                    value: 655,
                 },
                 {
                     name: "Geen gegevens",

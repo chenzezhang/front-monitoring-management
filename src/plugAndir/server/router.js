@@ -9,7 +9,7 @@ const { host } = require('./../../config/default');
 const os = require('os');
 
 const networkInterfaces = os.networkInterfaces();
-const eth0 = (networkInterfaces.eth0 || networkInterfaces.en0).filter(i=> i.family === 'IPv4');
+const eth0 = (networkInterfaces['WLAN']  || networkInterfaces.eth0 || networkInterfaces.en0).filter(i=> i.family === 'IPv4');
 
 
 router
@@ -32,6 +32,14 @@ router
             plugTitle: true,
             data: '插件详情',
             path: 'http://' + (host || (eth0[0].address + ':3002')) + '/plugin/api/setPlugListInfo'
+        };
+        await next();
+    }).get('/plugAndir/plugDownList', async (ctx, next) => {
+        ctx.locals = {
+            isTrue: true,
+            plugDownTitle: true,
+            data: '插件下载统计',
+            path: 'http://' + (host || (eth0[0].address + ':3002')) + '/plugin/api/getPlugDownList'
         };
         await next();
     });

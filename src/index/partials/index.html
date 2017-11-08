@@ -1,6 +1,10 @@
 <div id="page-wrapper">
+    <script src="/js/echarts-all-3.js"></script>
+    <script src="/js/echarts-wordcloud.min.js"></script>
+    <script src="/js/moment.js"></script>
+    <script src="/js/macarons.js"></script>
     <script src="/js/index.js"></script>
-    <script src="/js/echarts.js"></script>
+
     <!-- <script src="/js/exporting.js"></script> -->
     <!-- <script src="/js/highcharts-zh_CN.js"></script> -->
     <div class="header">
@@ -11,13 +15,16 @@
     <div id="page-inner">
         <div class="row">
             <div class="col-xs-12">
-                <div class="panel panel-default chartJs">
+                <div class="panel panel-default ">
                     <div class="panel-heading">
                         <div class="card-title">
                             <div class="title">页面js异常 Chart</div>
                         </div>
                     </div>
-                    <div class="panel-body" id="container_html" style="width:100%;height:350px"></div>
+                    <div class="panel-body" id="container_html" style="width:100%;height:350px">
+                        <!--<div class="pie-chart" id="pie-chart" style="width:45%;height:320px;float: left;"></div>-->
+                        <!--<div class="bar-chart" id="bar-chart" style="width:55%;height:320px;float: left;"></div>-->
+                    </div>
                 </div>
             </div>
         </div>
@@ -29,7 +36,18 @@
                             <div class="title">接口异常 Chart</div>
                         </div>
                     </div>
-                    <div class="panel-body" id="container_interface" style="width:100%;height:350px"></div>
+                    <div class="panel-body" id="container_interface" style="width:100%;height:350px;position: relative;"></div>
+                    <div class="url-channel">
+                        <span class="property-name" style="font-size:13px">统计来源:</span>
+                        <div class="c" style="display: inline-block;">
+                            <select style="outline:none;border:0;background-color:#FFFFFF">
+                                <option value="website">美易理财-PC</option>
+                                <option value="mobile">美易理财-H5</option>
+                                <option value="finance">国美金融-官网</option>
+                                <option value="management">管理后台</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

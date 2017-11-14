@@ -1,6 +1,8 @@
 $(function () {
 
     $('#name').val(getvl('name'));
+    $('#id').val(getvl('id'));
+    $('#projectId').val(getvl('projectId'));
     $('.add').on('click', function () {
         $('.mask, .upload').show();
     });

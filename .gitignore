@@ -13,4 +13,6 @@ proxy/proxy.js
 *.log
 
 .vscode/
+.idea/
 
+index.js
